@@ -1,0 +1,52 @@
+﻿@page "/list"
+
+<h3>List</h3>
+
+<div class="demo-container">
+    <div id="grid-container"></div>
+    <div class="options">
+        <div class="caption">Options</div>
+        <div class="option">
+            <div id="column-lines"></div>
+        </div>
+        <div class="option">
+            <div id="row-lines"></div>
+        </div>
+        <div class="option">
+            <div id="show-borders"></div>
+        </div>
+        <div class="option">
+            <div id="row-alternation"></div>
+        </div>
+    </div>
+</div>
+
+
+@foreach (var listitem in NewList)
+{
+    @listitem.FirstName <br />
+}
+
+@code {
+    protected List<ListItems> NewList = new List<ListItems>()
+    {
+        new ListItems(){FirstName = "Daniel", LastName = "John", City = "US", State = "Washington", Birth = "N/A", Hire = "N/A"},
+        new ListItems(){FirstName = "Daniel", LastName = "John", City = "US", State = "Washington", Birth = "N/A", Hire = "N/A"},
+        new ListItems(){FirstName = "Daniel", LastName = "John", City = "US", State = "Washington", Birth = "N/A", Hire = "N/A"}
+    };
+
+
+
+
+
+
+
+
+    //    private string ClickedList {get;set;}
+
+    //  private List<ListItems> newList = new List<ListItems>();
+
+    //private void Added(){        newList.Add(new ListItems(ClickedList));    }
+
+
+}
