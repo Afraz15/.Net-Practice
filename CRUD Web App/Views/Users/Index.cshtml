@@ -1,0 +1,32 @@
+﻿@model List<CRUD_Web_App.Models.Domain.Users>
+@{
+}
+
+<h2>Users List</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th> 
+            <th>Email</th>
+            <th>Salary</th>
+            <th>Department</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var user in Model)
+        {
+            <tr>
+                <td>@user.Id<td>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+                <td>@user.Salary</td>
+                <td>@user.Department</td>
+                <td><a class="btn btn-primary" href="Users/View/@user.Id">Update</a></td>
+                       
+                @*<td><button type="submit" class="btn btn-danger" asp-action="Delete" asp-controller="Users">Delete</button></td>*@
+            </tr>
+        }
+    </tbody>
+</table>
