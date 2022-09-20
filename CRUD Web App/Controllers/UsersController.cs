@@ -37,7 +37,7 @@ namespace CRUD_Web_App.Controllers
                 Name = addUsersRequest.Name,
                 Email = addUsersRequest.Email,
                 Salary = addUsersRequest.Salary,
-                Department = addUsersRequest.Department,
+              //  Department = addUsersRequest.Department,
             };
             
             await MVCContext.Users.AddAsync(user);
@@ -58,7 +58,7 @@ namespace CRUD_Web_App.Controllers
                     Name = user.Name,
                     Email = user.Email,
                     Salary = user.Salary,
-                    Department = user.Department,
+                 //   Department = user.Department,
                 };
                 return await Task.Run(() => View("View", ViewModel));
             }
@@ -75,7 +75,7 @@ namespace CRUD_Web_App.Controllers
                 user.Name = model.Name; 
                 user.Email = model.Email;
                 user.Salary = model.Salary;
-                user.Department = model.Department;
+                // user.Department = model.Department;
 
                 await MVCContext.SaveChangesAsync();
                 return RedirectToAction("index");
