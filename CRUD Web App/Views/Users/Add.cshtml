@@ -1,10 +1,11 @@
-﻿@model CRUD_Web_App.Models.AddUsersView
+﻿@*@model CRUD_Web_App.Models.AddUsersView*@
+@model List<CRUD_Web_App.Models.Domain.Departments>
 @{
 }
 
 <h2>Add a User</h2>
 <form method="post" action="Add" class="mt-4">
-    <div class="mb-4">
+ @*   <div class="mb-4">
         <label for="Name" class="form-label h6">
             Name
         <input type="text" class="form-control" id="Name" asp-for="Name">
@@ -21,12 +22,23 @@
             Salary
             <input type="number" class="form-control" id="Salary" asp-for="Salary">
     </div>
+*@
+    <div>
+        <select class="form-select" aria-label="Default select example">
+            @foreach(var dept in Model)
+            {
+                <option selected>Open this select menu</option>
+                <option value="@dept.Id">@dept.DepartmentName</option>
+            }
 
-    <div class="mb-4">
+        </select>
+    </div>
+
+@*    <div class="mb-4">
         <label for="Depart" class="form-label h6">
             Department
         <input type="text" class="form-control" id="Depart" asp-for="Department">
-    </div>
+    </div>*@
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
