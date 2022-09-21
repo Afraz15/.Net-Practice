@@ -22,7 +22,7 @@ namespace CRUD_Web_App.Controllers
         }
 
         [HttpGet]
-        public IActionResult Error()
+        public IActionResult CodeError()
         {
             return View();
         }
