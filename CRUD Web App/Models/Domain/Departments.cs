@@ -4,11 +4,9 @@ namespace CRUD_Web_App.Models.Domain
 {
     public class Departments
     {
-        public Guid ID { get; set; }
+        public Guid Id { get; set; }
         public string DepartmentName { get; set; }
+        //public IList<Users> Users { get; set; }
 
-
-        public int UsersID { get; set; }
-        public Users Users { get; set; }
     }
 }

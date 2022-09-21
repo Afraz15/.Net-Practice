@@ -1,0 +1,22 @@
+﻿@model CRUD_Web_App.Models.AddDepartment
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h2>Add New Department</h2>
+<form method="post" action="Add" class="mt-4">
+    <div class="mb-4">
+        <label for="Name" class="form-label h6">
+            New Department Name
+            <input type="text" class="form-control" id="Name" asp-for="DepartmentName">
+    </div>
+    <div class="mb-4">
+        <label for="Code" class="form-label h6">
+            Admin Code (111)
+            <input type="password" class="form-control" id="Code" asp-for="DepartmentAdmin">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>

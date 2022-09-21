@@ -6,9 +6,10 @@
         public string Name { get; set; }
         public string Email { get; set; }
         public long Salary { get; set; }
-        // public string Department { get; set; }
-        public int DepartmentID { get; set; }
-        public List<Departments> Departments { get; set; } // = new List<Departments> { };
+        /*public int DeptId { get; set; }
+        public Departments Department { get; set; }
+*/
+
 
     }
 }

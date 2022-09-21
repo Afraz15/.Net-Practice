@@ -7,7 +7,7 @@ namespace CRUD_Web_App.Data
     {
         public MVCDbContext(DbContextOptions options) : base(options) { }
         public DbSet<Users> Users { get; set; }
-        public DbSet<Departments> Departments { get; set; }
+        public DbSet<Departments> Departments { get; set; } 
 
     }
 }

@@ -43,16 +43,6 @@ namespace CRUD_Web_App.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("Department")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("DepartmentID")
-                        .HasColumnType("int");
-
-                    b.Property<Guid>("DepartmentsId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -66,25 +56,7 @@ namespace CRUD_Web_App.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepartmentsId");
-
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("CRUD_Web_App.Models.Domain.Users", b =>
-                {
-                    b.HasOne("CRUD_Web_App.Models.Domain.Departments", "Departments")
-                        .WithMany("Users")
-                        .HasForeignKey("DepartmentsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Departments");
-                });
-
-            modelBuilder.Entity("CRUD_Web_App.Models.Domain.Departments", b =>
-                {
-                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }

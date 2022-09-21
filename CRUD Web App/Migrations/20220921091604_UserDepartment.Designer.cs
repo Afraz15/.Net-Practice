@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CRUD_Web_App.Migrations
 {
     [DbContext(typeof(MVCDbContext))]
-    [Migration("20220919045226_Dept")]
-    partial class Dept
+    [Migration("20220921091604_UserDepartment")]
+    partial class UserDepartment
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -30,6 +30,10 @@ namespace CRUD_Web_App.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("DepartmentName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Departments");
@@ -40,16 +44,6 @@ namespace CRUD_Web_App.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Department")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<Guid>("DepartmentsId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<int>("DeptId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -64,25 +58,7 @@ namespace CRUD_Web_App.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("DepartmentsId");
-
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("CRUD_Web_App.Models.Domain.Users", b =>
-                {
-                    b.HasOne("CRUD_Web_App.Models.Domain.Departments", "Departments")
-                        .WithMany("Users")
-                        .HasForeignKey("DepartmentsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Departments");
-                });
-
-            modelBuilder.Entity("CRUD_Web_App.Models.Domain.Departments", b =>
-                {
-                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }
