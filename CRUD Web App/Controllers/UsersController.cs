@@ -24,9 +24,10 @@ namespace CRUD_Web_App.Controllers
         }
 
         [HttpGet]
-        public IActionResult Add()
+        public async Task<IActionResult> Add()
         {
-            return View();
+            var depts = await MVCContext.Departments.ToListAsync();
+            return View(model: depts);
         }
         
         [HttpPost]
