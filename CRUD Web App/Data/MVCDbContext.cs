@@ -1,4 +1,4 @@
-﻿using CRUD_Web_App.Models.Domain;
+﻿using CRUD_Web_App.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CRUD_Web_App.Data

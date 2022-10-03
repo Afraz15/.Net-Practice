@@ -1,8 +1,8 @@
-﻿using CRUD_Web_App.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using CRUD_Web_App.Models;
 
-namespace CRUD_Web_App.Controllers
+namespace UserCrud.Controllers
 {
     public class HomeController : Controller
     {
